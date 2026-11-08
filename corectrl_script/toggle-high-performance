@@ -1,0 +1,78 @@
+#!/bin/bash
+
+# make sure to install corectrl use pacman for arch , apt for debian , dnf for fedora 
+# u can run the script by keyboard shortcut useful for gaming on laptops suffers from high temp
+# u can always disable turn off the gamemode by running the script again
+# iknow this things are very simple and basics for a linuxe user but not for me i spent hours with ai just to have this result i donot want to loose all this by formating my device
+  
+appName=corectrl
+stateFile="/tmp/corectrl-gamemode-state"
+
+# Check dependency if app installed
+if ! command -v "$appName"; then
+    notify-send "Not found !" "$appName not installed as native software."
+    exit 1
+fi
+
+# Launch application if not running
+if ! pgrep -x "$appName"
+ then
+
+    "$appName" &
+    count=0
+
+    while ! pgrep -x "$appName"; do
+
+        sleep 0.5
+        count=$((count+1))
+        # let "count++" another way
+
+        if [ "$count" -gt 10 ]
+        # if (( count > 10 )); then   # ✅ arithmetic command (note: no $)
+         then
+            notify-send "CoreCtrl Error !" "$appName launch timed out !"
+            exit 1
+        fi
+
+    done
+    # Remove old state file if app had to be started fresh
+    rm -f "$stateFile"
+
+    exit 0
+fi
+
+
+# check if file exist means the app is running and toggle is on/off
+# if not exist means app wasnot running fdefault value is off
+if [ -f "$stateFile" ]; then
+    active=$(cat "$stateFile")
+else
+    active=off
+fi
+
+
+        # if $((count > 10)) output is 1 or 0 it is like any comman when runs like below 
+
+# 4. Toggle profile & update persisted state
+if "$appName" -m "GameMode"
+ then
+
+    if [ "$active" = "on" ]
+    then
+        active="off"
+    else
+        active="on"
+    fi
+
+    # Save the new state for the next execution
+    # $ means replace the name with its assigned value 
+    # $active turns into on/off
+    # $stateFile turns into /tmp/corectrl-gamemode-state
+    echo "$active" > "$stateFile"
+
+    notify-send "CoreCtrl" "GameMode $active"
+
+else
+    notify-send "CoreCtrl Error !" "couldn\'t toggle GameMode"
+    exit 1
+fi
