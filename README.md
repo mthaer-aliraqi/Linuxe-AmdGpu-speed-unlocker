@@ -2,12 +2,16 @@
 
 ## usage (summary) the thing u need in simple words
 -
--   all what u need 's to download 'gpu-speed-unlocker.sh' and then make it excutable then go to desktop > R Click Mouse > create_new > link_to_application
+-   you need to download 'gpu-speed-unlocker.sh' and then make it excutable then go to desktop > R Click Mouse > create_new > link_to_application
 -   in application tab > program > Browse , then select your file make sure to activate run_in_terminal  
 -   and that's run it your gpu speed unlocked.
 -   to restore normal state just run the script again it will be disable
 -   and if u did reboot your laptop the default settings 'd be restored  
--  
+
+### this method is safe and it runs on my laptop without issues.
+### However in case your device [laptop,pc,etc...] get corrupted or crashed or damaged i am not responsible at all
+## you do it at your own risk.
+
 ## 📌 Executive Summary
 
 On hybrid graphics laptops (e.g., **Intel iGPU + AMD dGPU** such as Radeon R7 M365X / Opal XT / GCN architectures), the Linux kernel's default power management aggressively downclocks or completely powers off discrete GPUs when not rendering active desktop displays.
