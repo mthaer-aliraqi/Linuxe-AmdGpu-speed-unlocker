@@ -8,9 +8,9 @@
 -   to restore normal state just run the script again it will be disable
 -   and if u did reboot your laptop the default settings 'd be restored  
 
-### this method is safe and it runs on my laptop without issues.
-### However in case your device [laptop,pc,etc...] get corrupted or crashed or damaged i am not responsible at all
-## you do it at your own risk.
+### 🟨 this method is safe and it runs on my laptop without issues.
+### 🚨 However in case your device [laptop,pc,etc...] get corrupted or crashed or damaged i am not responsible at all
+## 🚨 you do it at your own risk.
 
 ## 📌 Executive Summary
 
