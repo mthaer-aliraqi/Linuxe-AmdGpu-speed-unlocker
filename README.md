@@ -2,11 +2,17 @@
 
 ## usage (summary) the thing u need in simple words
 -
+### for GUI
+
+- just download the folder called gui
+- run main.py
+  
+### for CLI (Command Line Interface)
 -   you need to download 'gpu-speed-unlocker.sh' and then make it excutable then go to desktop > R Click Mouse > create_new > link_to_application
 -   in application tab > program > Browse , then select your file make sure to activate run_in_terminal  
 -   and that's run it your gpu speed unlocked.
 -   to restore normal state just run the script again it will be disable
--   and if u did reboot your laptop the default settings 'd be restored  
+-   and if u did reboot your laptop the default settings 'd be restored
 
 ### 🟨 this method is safe and it runs on my laptop without issues.
 ### 🚨 However in case your device [laptop,pc,etc...] get corrupted or crashed or damaged i am not responsible at all
